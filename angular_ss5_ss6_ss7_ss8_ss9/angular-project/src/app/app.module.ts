@@ -7,13 +7,23 @@ import { FormDangKiComponent } from './ss6_component/form_dang_ki/form-dang-ki/f
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UserInforComponent } from './ss6_component/form_dang_ki/user-infor/user-infor.component';
 import { FormDangNhapComponent } from './ss6_component/form_dang_nhap/form-dang-nhap/form-dang-nhap.component';
+import { HeaderComponent } from './case_study/header/header/header.component';
+import { ListProductComponent } from './ss7_component/list-product/list-product.component';
+import { CreateProductComponent } from './ss7_component/create-product/create-product.component';
+import { EditProductComponent } from './ss7_component/edit-product/edit-product.component';
+import { DeleteProductComponent } from './ss7_component/delete-product/delete-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormDangKiComponent,
     UserInforComponent,
-    FormDangNhapComponent
+    FormDangNhapComponent,
+    HeaderComponent,
+    ListProductComponent,
+    CreateProductComponent,
+    EditProductComponent,
+    DeleteProductComponent
   ],
   imports: [
     BrowserModule,

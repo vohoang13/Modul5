@@ -12,6 +12,8 @@ import { ListProductComponent } from './ss7_component/list-product/list-product.
 import { CreateProductComponent } from './ss7_component/create-product/create-product.component';
 import { EditProductComponent } from './ss7_component/edit-product/edit-product.component';
 import { DeleteProductComponent } from './ss7_component/delete-product/delete-product.component';
+import { ListDictionaryComponent } from './ss7_dictionary_component/list-dictionary/list-dictionary/list-dictionary.component';
+import { DetailComponent } from './ss7_dictionary_component/detail-dictionary/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DeleteProductComponent } from './ss7_component/delete-product/delete-pr
     ListProductComponent,
     CreateProductComponent,
     EditProductComponent,
-    DeleteProductComponent
+    DeleteProductComponent,
+    ListDictionaryComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

@@ -17,32 +17,37 @@ export class DeleteProductComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(next =>{
       const id = next.get('id');
       if(id != null){
-        this.product = this.productService.findById(parseInt(id));
-        Swal.fire({
-          title: 'Are you sure want to remove?' + this.product.name,
-          text: 'You will not be able to recover this product!',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonText: 'Yes, delete it!',
-          cancelButtonText: 'No, keep it'
-        }).then((result) => {
-          if (result.value) {
-            this.productService.delete(parseInt(id));
-            Swal.fire(
-              'Deleted!',
-              'Your imaginary file has been deleted.',
-              'success'
-            )
-            this.router.navigateByUrl('');
-          } else if (result.dismiss === Swal.DismissReason.cancel) {
-            Swal.fire(
-              'Cancelled',
-              'Your imaginary file is safe :)',
-              'error'
-            )
-            this.router.navigateByUrl('');
-          }
-        })
+        console.log(id);
+        this.productService.findById(parseInt(id)).subscribe(next => {
+          this.product = next;
+          Swal.fire({
+            title: 'Are you sure want to remove?' + this.product.name,
+            text: 'You will not be able to recover this product!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, keep it'
+          }).then((result) => {
+            if (result.value) {
+              this.productService.delete(parseInt(id)).subscribe(next =>{
+                Swal.fire(
+                  'Deleted!',
+                  'Your imaginary file has been deleted.',
+                  'success'
+                )
+                this.router.navigateByUrl('');
+              });
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+              Swal.fire(
+                'Cancelled',
+                'Your imaginary file is safe :)',
+                'error'
+              )
+              this.router.navigateByUrl('');
+            }
+          })
+        });
+
 
       }
     },error => {

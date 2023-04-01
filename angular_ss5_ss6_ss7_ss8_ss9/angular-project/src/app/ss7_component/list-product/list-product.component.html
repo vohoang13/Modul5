@@ -5,10 +5,11 @@
     <th>Name</th>
     <th>Price</th>
     <th>Descriptions</th>
+    <th>Category</th>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
-  <tr *ngFor="let p of product" [routerLink]="['/update',p.id]">
+  <tr *ngFor="let p of product" >
     <td>
       {{p.id}}
     </td>
@@ -22,7 +23,10 @@
       {{p.descriptions}}
     </td>
     <td>
-      <a class="btn btn-infor">Edit</a>
+      {{p.category.nameCategory}}
+    </td>
+    <td>
+      <a [routerLink]="['/update',p.id]">Edit</a>
     </td>
     <td>
       <a [routerLink]="['/delete',p.id]" >Delete</a>

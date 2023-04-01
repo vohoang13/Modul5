@@ -9,25 +9,25 @@ import {DetailComponent} from "./ss7_dictionary_component/detail-dictionary/deta
 
 
 const routes: Routes = [
-  // {
-  //   path : '', component : ListProductComponent
-  // },
-  // {
-  //   path: 'create',component: CreateProductComponent
-  // },
-  // {
-  //   path: 'update/:id', component: EditProductComponent
-  // },
-  // {
-  //   path: 'delete/:id', component: DeleteProductComponent
-  // }
-
   {
-    path : '', component : ListDictionaryComponent
+    path : '', component : ListProductComponent
   },
   {
-    path : 'detail/:id', component : DetailComponent
+    path: 'create',component: CreateProductComponent
+  },
+  {
+    path: 'update/:id', component: EditProductComponent
+  },
+  {
+    path: 'delete/:id', component: DeleteProductComponent
   }
+
+  // {
+  //   path : '', component : ListDictionaryComponent
+  // },
+  // {
+  //   path : 'detail/:id', component : DetailComponent
+  // }
 ];
 
 @NgModule({

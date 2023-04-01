@@ -14,6 +14,7 @@ import { EditProductComponent } from './ss7_component/edit-product/edit-product.
 import { DeleteProductComponent } from './ss7_component/delete-product/delete-product.component';
 import { ListDictionaryComponent } from './ss7_dictionary_component/list-dictionary/list-dictionary/list-dictionary.component';
 import { DetailComponent } from './ss7_dictionary_component/detail-dictionary/detail/detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,10 +31,11 @@ import { DetailComponent } from './ss7_dictionary_component/detail-dictionary/de
     DetailComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

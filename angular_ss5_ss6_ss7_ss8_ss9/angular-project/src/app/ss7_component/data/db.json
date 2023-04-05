@@ -1,16 +1,6 @@
 {
   "product": [
     {
-      "id": 1,
-      "name": "Iphone11",
-      "price": 1500000,
-      "descriptions": "New",
-      "category": {
-        "id": 1,
-        "nameCategory": "Apple"
-      }
-    },
-    {
       "id": 4,
       "name": "sfds",
       "price": 12323,

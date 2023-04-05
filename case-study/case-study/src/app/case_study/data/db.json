@@ -1,0 +1,54 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Võ Văn Hoàng",
+      "dateOfBirth": "2023-03-29",
+      "gender": "Nam",
+      "idCard": "201901564",
+      "phoneNumber": 935530198,
+      "email": "vanhoang@gmail.com",
+      "address": "550000",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Huy",
+      "dateOfBirth": "2023-03-30",
+      "gender": "Nam",
+      "phoneNumber": 935530198,
+      "idCard": "0935530198",
+      "email": "hoang@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ]
+}

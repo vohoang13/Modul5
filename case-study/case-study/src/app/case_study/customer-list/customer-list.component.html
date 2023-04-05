@@ -1,0 +1,31 @@
+<app-header></app-header>
+<h4 style="font-family: Algerian; text-align: center; font-size:50px">Customer</h4>
+<table class="table">
+  <thead class="table-light">
+    <th>Name</th>
+    <th>DayOfBirth</th>
+    <th>Gender</th>
+    <th>Phone</th>
+    <th>IdCard</th>
+    <th>Email</th>
+    <th>Customer Type</th>
+    <th>Address</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customers of customer">
+      <td>{{customers.name}}</td>
+      <td>{{customers.dateOfBirth}}</td>
+      <td>{{customers.gender}}</td>
+      <td>{{customers.phoneNumber}}</td>
+      <td>{{customers.idCard}}</td>
+      <td>{{customers.email}}</td>
+      <td>{{customers.customerType.name}}</td>
+      <td>{{customers.address}}</td>
+      <td><button class="btn btn-info"><a style="text-decoration: none; color: black" [routerLink]="['/customer/edit',customers.id]">Edit</a></button></td>
+      <td><button class="btn btn-danger"><a style="text-decoration: none; color: black" [routerLink]="['/customer/delete',customers.id]">Delete</a></button></td>
+    </tr>
+  </tbody>
+</table>
+<app-footer></app-footer>

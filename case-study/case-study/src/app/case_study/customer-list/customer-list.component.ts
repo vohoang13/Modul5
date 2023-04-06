@@ -15,6 +15,7 @@ export class CustomerListComponent implements OnInit {
   customer : Customer[] = [];
   custom : Customer;
   customerType : CustomerType[] = [];
+  p: number = 1;
 
   constructor(private customerService : CustomerServiceService, private customerTypeService : CustomerTypeServiceService,
               private router : Router, private activatedRoute : ActivatedRoute) {
@@ -70,4 +71,14 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  search(value: string) {
+    this.customerService.findByName(value).subscribe(next=>{
+      if(next == null){
+        alert("null");
+      }else{
+        this.customer = next;
+      }
+
+    })
+  }
 }

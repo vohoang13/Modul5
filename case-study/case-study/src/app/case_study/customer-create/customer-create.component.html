@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div id="input" class="container"
      style="border: 1px solid; box-shadow: -10px 0px 10px -5px rgba(0, 0, 0, 0.75), 10px 0px 10px -5px rgba(0, 0, 0, 0.75); padding: 10px; border-radius:5px">
-  <h3>Infor Customer</h3>
+  <h3 style="font-family: Algerian;">Infor Customer</h3>
   <form class="row g-3" [formGroup]="reactiveForm" (ngSubmit)="addNew()" *ngIf="reactiveForm">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Name</label>
@@ -14,7 +14,7 @@
     </div>
     <div class="col-6">
       <label for="inputAddress" class="form-label">PhoneNumber</label>
-      <input type="number" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="phoneNumber">
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="phoneNumber">
     </div>
     <div class="col-6">
       <label for="inputAddress2" class="form-label">Id Card</label>

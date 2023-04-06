@@ -9,10 +9,12 @@ import {HttpClient} from "@angular/common/http";
 export class CustomerServiceService {
   customer : Customer[];
 
+  page : number = 1;
+
   constructor(private httpClient : HttpClient) { }
 
   getAll() : Observable<Customer[]> {
-    return this.httpClient.get<Customer[]>("  http://localhost:3000/customer");
+    return this.httpClient.get<Customer[]>("  http://localhost:3000/customer?_" + this.page);
   }
 
   findById(number: number) : Observable<Customer> {
@@ -29,5 +31,9 @@ export class CustomerServiceService {
 
   update(customer, id : number) : Observable<any>{
     return this.httpClient.put<any>("http://localhost:3000/customer/" + id, customer);
+  }
+
+  findByName(name : string ) : Observable<Customer[]>{
+    return this.httpClient.get<Customer[]>("http://localhost:3000/customer?name_like=" + name);
   }
 }

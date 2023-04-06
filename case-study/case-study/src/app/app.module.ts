@@ -10,6 +10,7 @@ import { FooterComponent } from './case_study/footer/footer.component';
 import { CustomerListComponent } from './case_study/customer-list/customer-list.component';
 import { CustomerCreateComponent } from './case_study/customer-create/customer-create.component';
 import { CustomerEditComponent } from './case_study/customer-edit/customer-edit.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { CustomerEditComponent } from './case_study/customer-edit/customer-edit.
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
+    NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule
   ],

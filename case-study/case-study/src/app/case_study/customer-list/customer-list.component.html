@@ -1,22 +1,30 @@
 <app-header></app-header>
 <h4 style="font-family: Algerian; text-align: center; font-size:50px">Customer</h4>
-<table class="table">
-  <thead class="table-light">
-    <th>Name</th>
-    <th>DayOfBirth</th>
-    <th>Gender</th>
-    <th>Phone</th>
-    <th>IdCard</th>
-    <th>Email</th>
-    <th>Customer Type</th>
-    <th>Address</th>
-    <th>Edit</th>
-    <th>Delete</th>
+<div>
+  <form>
+    <input type="text" #nameCustomer class="form-control" placeholder="Enter your name">
+    <input type="submit" (click)="search(nameCustomer.value)" value="Search" class="btn btn-primary">
+  </form>
+</div>
+<table class="table table-striped">
+  <thead class="thread-dark">
+    <tr>
+      <th>Name</th>
+      <th>DayOfBirth</th>
+      <th>Gender</th>
+      <th>Phone</th>
+      <th>IdCard</th>
+      <th>Email</th>
+      <th>Customer Type</th>
+      <th>Address</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let customers of customer">
+    <tr *ngFor="let customers of customer | paginate : {itemsPerPage : 1,currentPage : p}">
       <td>{{customers.name}}</td>
-      <td>{{customers.dateOfBirth}}</td>
+      <td>{{customers.dateOfBirth  | date :"dd/MM/yyyy"}}</td>
       <td>{{customers.gender}}</td>
       <td>{{customers.phoneNumber}}</td>
       <td>{{customers.idCard}}</td>
@@ -28,4 +36,11 @@
     </tr>
   </tbody>
 </table>
+<pagination-controls class="pagination justify-content-center"
+                     previousLabel=""
+                     nextLabel=""
+                     ellipsisLabel="..."
+                     (pageChange)="p = $event">
+</pagination-controls>
 <app-footer></app-footer>
+
